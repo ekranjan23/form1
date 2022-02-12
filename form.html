@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: aliceblue;
+            margin: 150px;
+            font-family: cursive;
+        }
+
+        .step1 {
+            /* border: 1px solid orange; */
+            margin: 5px;
+            padding: 9px;
+
+        }
+
+        #step {
+            /* border: 3px outset orange; */
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        textarea {
+            width: 100%;
+            height: 90px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="radio"],
+        select {
+            margin: 10px;
+
+        }
+
+        input[type="submit"] {
+        width: 100%;
+        
+        }
+        h1{
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            border: 4px outset rgb(0, 174, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Payment method</h1>
+    <hr>
+
+    <form action="data.php">
+        <div id="step">
+            <div class="step1">
+                <h2>Step 1: Your details</h2>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Enter your name" name="name" id="name">
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="ramesh@gmail.com" name="email" id="email">
+                </div>
+
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" placeholder="123-45-678-0" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        id="phone">
+                </div>
+            </div>
+            <div class="step1">
+                <h2>Step 2: Delivery address </h2>
+                <div>
+                    <label for="address">Address:</label>
+                    <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                </div><br>
+                <div>
+                    <label for="post">Post code:</label>
+                    <input type="number" placeholder="Enter your Pin code" name="post" id="post">
+
+                </div>
+
+                <div>
+                    <label for="country">Country:</label>
+                    <select name="select" id="country">
+                        <option value="ind">India</option>
+                        <option value="pk">Pakistan</option>
+                        <option value="Cn">China</option>
+                        <option value="Aca">America</option>
+                        <option value="japan">Papan</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="step1">
+                <h2>Step 3: Card details</h2>
+                <div>
+                    <label for="card">Card type:</label>
+                    VISA <input type="radio" name="card" id="card">
+                    Mastercard <input type="radio" name="card" id="card">
+                    Rupay <input type="radio" name="card" id="card">
+                </div>
+                <div>
+                    <label for="cardnum">Card number:</label>
+                    <input type="tel" name="cardnum" id="cardnum" pattern="\d*" maxlength="16"
+                        placeholder="4444-5555-9999-8888">
+                </div>
+                <div>
+                    <label for="codes">Security code:</label>
+                    <input type="tel" name="codes" id="codes" pattern="\d*" maxlength="3" placeholder="CVV">
+                </div>
+                <div>
+                    <label for="namecard">Name on card</label>
+                    <input type="text" name="namecard" id="namecard" placeholder="Enter name as card">
+                </div>
+
+            </div>
+            <div>
+                <input type="submit" value="Proceed">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
